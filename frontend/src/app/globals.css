@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+/* =============================================
+   CSS Custom Properties — Theme System
+   ============================================= */
+
+:root {
+  /* Light theme (default) */
+  --bg-base: #FAFCFA;
+  --bg-surface: #FFFFFF;
+  --bg-subtle: #F0F0F4;
+  --bg-muted: #F8F9FA;
+
+  --border-base: #D8D8E5;
+  --border-light: #E8E8EF;
+
+  --text-primary: #030507;
+  --text-secondary: #575758;
+  --text-tertiary: #858589;
+
+  /* Brand colors */
+  --brand-primary: #1B606F;
+  --brand-accent: #86ECE4;
+  --brand-purple: #BEC9FF;
+  --brand-yellow: #FFF388;
+}
+
+/* Dark theme — applied via [data-theme="dark"] */
+[data-theme="dark"] {
+  --bg-base: #0F1117;
+  --bg-surface: #1A1D27;
+  --bg-subtle: #252836;
+  --bg-muted: #1E2130;
+
+  --border-base: #2E3143;
+  --border-light: #383C52;
+
+  --text-primary: #E8E9ED;
+  --text-secondary: #9CA0B0;
+  --text-tertiary: #6B6F80;
+
+  /* Brand colors — slightly adjusted for dark bg */
+  --brand-primary: #2A8A9E;
+  --brand-accent: #86ECE4;
+  --brand-purple: #7C84FF;
+  --brand-yellow: #FFD93D;
+}
+
+@theme inline {
+  --color-background: var(--bg-base);
+  --color-foreground: var(--text-primary);
+  --color-surface: var(--bg-surface);
+  --color-subtle: var(--bg-subtle);
+  --color-muted: var(--bg-muted);
+  --color-border: var(--border-base);
+  --color-border-light: var(--border-light);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-purple: var(--brand-purple);
+  --color-brand-yellow: var(--brand-yellow);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

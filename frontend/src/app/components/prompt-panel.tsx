@@ -1,0 +1,37 @@
+﻿"use client"
+
+interface PromptPanelProps {
+  availableCash: number
+}
+
+export function PromptPanel({ availableCash }: PromptPanelProps) {
+  const formatCurrency = (amount: number) => {
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(amount)
+  }
+
+  return (
+    <div className="h-full flex flex-col bg-white">
+      <div className="p-4 border-b border-[#D8D8E5] bg-[#FAFCFA]">
+        <div className="flex items-center gap-2 mb-2">
+          <span className="text-xl">🪁</span>
+          <div>
+            <h1 className="text-lg font-semibold text-[#030507] font-['Roobert']">Portfolio Chat</h1>
+            <div className="inline-block px-2 py-0.5 bg-[#BEC9FF] text-[#030507] text-xs font-semibold uppercase rounded">
+              PRO
+            </div>
+          </div>
+        </div>
+        <p className="text-xs text-[#575758]">Interact with the LangGraph-powered AI agent for portfolio visualization and analysis</p>
+        <div className="mt-3 p-2 bg-[#86ECE4]/10 rounded-lg">
+          <div className="text-xs text-[#575758] font-medium">Available Cash</div>
+          <div className="text-sm font-semibold text-[#030507] font-['Roobert']">{formatCurrency(availableCash)}</div>
+        </div>
+      </div>
+    </div>
+  )
+}
